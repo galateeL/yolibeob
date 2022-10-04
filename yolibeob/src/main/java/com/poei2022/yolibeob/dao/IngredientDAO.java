@@ -15,4 +15,6 @@ public interface IngredientDAO {
     boolean delete(long id);
 
     boolean edit(Ingredient ingredientToEdit);
+
+    Optional<Ingredient> findByName(String name);
 }

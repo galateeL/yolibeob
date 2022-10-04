@@ -31,13 +31,23 @@ public class Recipe implements Serializable {
     @JoinColumn(name="user_fk")
     private User user;
 
-    @ManyToMany(mappedBy = "recipeList")
-    private List<Ingredient> ingredientList;
+    @OneToMany(mappedBy = "recipe" )
+    private List<IngredientRecipe> ingredientRecipeList;
 
     public Recipe() {
     }
 
-    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, User user, List<Ingredient> ingredientList) {
+    public Recipe(String title, String pictureUrl, String time, String steps, int person, User user, List<IngredientRecipe> ingredientRecipeList) {
+        this.title = title;
+        this.pictureUrl = pictureUrl;
+        this.time = time;
+        this.steps = steps;
+        this.person = person;
+        this.user = user;
+        this.ingredientRecipeList = ingredientRecipeList;
+    }
+
+    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, User user, List<IngredientRecipe> ingredientRecipeList) {
         this.id = id;
         this.title = title;
         this.pictureUrl = pictureUrl;
@@ -45,17 +55,7 @@ public class Recipe implements Serializable {
         this.steps = steps;
         this.person = person;
         this.user = user;
-        this.ingredientList = ingredientList;
-    }
-
-    public Recipe(String title, String pictureUrl, String time, String steps, int person, User user, List<Ingredient> ingredientList) {
-        this.title = title;
-        this.pictureUrl = pictureUrl;
-        this.time = time;
-        this.steps = steps;
-        this.person = person;
-        this.user = user;
-        this.ingredientList = ingredientList;
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 
     public long getId() {
@@ -114,11 +114,11 @@ public class Recipe implements Serializable {
         this.user = user;
     }
 
-    public List<Ingredient> getIngredientList() {
-        return ingredientList;
+    public List<IngredientRecipe> getIngredientRecipeList() {
+        return ingredientRecipeList;
     }
 
-    public void setIngredientList(List<Ingredient> ingredientList) {
-        this.ingredientList = ingredientList;
+    public void setIngredientRecipeList(List<IngredientRecipe> ingredientRecipeList) {
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 }

@@ -1,5 +1,7 @@
 package com.poei2022.yolibeob.servlet;
 
+import com.oracle.wls.shaded.org.apache.bcel.generic.DADD;
+import com.poei2022.yolibeob.dao.DaoFactory;
 import com.poei2022.yolibeob.dao.entity.Ingredient;
 import com.poei2022.yolibeob.dao.entity.Recipe;
 import com.poei2022.yolibeob.dao.entity.User;
@@ -19,11 +21,12 @@ public class AddRecipeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<Recipe> recipes = DaoFactory.getRecipeDAO().findAll();
-        request.setAttribute("recipes", recipes);
+       List<Ingredient> ingredientList = DaoFactory.getIngredientDAO().findAll();
+       request.setAttribute("ingredients", ingredientList);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/addRecipe.jsp");
         rd.forward(request, response);
+
     }
 
     @Override
@@ -33,27 +36,27 @@ public class AddRecipeServlet extends HttpServlet {
         String time = req.getParameter("time");
         String steps = req.getParameter("steps");
         String personStr = req.getParameter("person");
-
         String userId = req.getParameter("user");
         String ingredients = req.getParameter("ingredient");
 
+
+        Recipe recipe = null;
         try {
 
             int person = Integer.parseInt(personStr);
 
-            Optional userOp = DaoFactory.getUserDAO().findById(Long.parseLong(userId));
-            User user = userOp.get();
+            recipe = new Recipe(
+                    title,
+                    pictureUrl,
+                    time, steps, person, null, null);
 
-            //Optional<Ingredient> = DaoFactory.getIngredientDAO.findById()
-
-            DaoFactory.getRecipeDAO().create(new Recipe(title, pictureUrl, time, steps, person, user,null ));
-
-        } catch (Exception e){
-            e.printStackTrace();
-
+            DaoFactory.getRecipeDAO().create(recipe);
+        }catch (Exception e){
+            req.setAttribute("error",true);
+            doGet(req,resp);
         }
 
-        resp.sendRedirect(req.getContextPath() + "/recipes");
+        resp.sendRedirect(req.getContextPath() + "/addIngredientToRecipe?id=" + recipe.getId());
     }
 
 }

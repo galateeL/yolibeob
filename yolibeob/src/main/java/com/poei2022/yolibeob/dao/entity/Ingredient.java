@@ -15,21 +15,25 @@ public class Ingredient implements Serializable {
     @Column
     private String title;
 
-    @ManyToMany(mappedBy = "ingredientList")
-    private List<Recipe> recipeList;
+    @OneToMany(mappedBy = "ingredient")
+    private List<IngredientRecipe> ingredientRecipeList;
 
     public Ingredient() {
     }
 
-    public Ingredient(long id, String title, List<Recipe> recipeList) {
+    public Ingredient(long id, String title, List<IngredientRecipe> ingredientRecipeList) {
         this.id = id;
         this.title = title;
-        this.recipeList = recipeList;
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 
-    public Ingredient(String title, List<Recipe> recipeList) {
+    public Ingredient(String title, List<IngredientRecipe> ingredientRecipeList) {
         this.title = title;
-        this.recipeList = recipeList;
+        this.ingredientRecipeList = ingredientRecipeList;
+    }
+
+    public Ingredient(String title) {
+        this.title = title;
     }
 
     public long getId() {
@@ -48,11 +52,11 @@ public class Ingredient implements Serializable {
         this.title = title;
     }
 
-    public List<Recipe> getRecipeList() {
-        return recipeList;
+    public List<IngredientRecipe> getIngredientRecipeList() {
+        return ingredientRecipeList;
     }
 
-    public void setRecipeList(List<Recipe> recipeList) {
-        this.recipeList = recipeList;
+    public void setIngredientRecipeList(List<IngredientRecipe> ingredientRecipeList) {
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 }

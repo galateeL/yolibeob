@@ -31,22 +31,14 @@
             <label for="person">Nb persons</label>
             <input id="person" type="text" name="person">
 
-            <label for="ingredient-select">Country</label>
-            <select name="ingredient" id="ingredient-select">
-                <option value="ingredient" disabled selected> --Please choose ingredients-- </option>
-                <c:forEach items="${requestScope.countries}" var="ingredient">
-                    <option value="${ingredient.id}">${ingredient.name}</option>
-                </c:forEach>
-            </select>
 
             <button type="submit">Create</button>
         </form>
 
+
     </div>
 
 </div>
-
-
 
 </body>
 </html>
