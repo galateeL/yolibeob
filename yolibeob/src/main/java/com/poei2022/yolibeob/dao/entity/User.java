@@ -1,7 +1,5 @@
 package com.poei2022.yolibeob.dao.entity;
 
-import jakarta.ws.rs.Consumes;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

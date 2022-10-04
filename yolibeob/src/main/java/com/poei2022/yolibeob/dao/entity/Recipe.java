@@ -27,18 +27,6 @@ public class Recipe implements Serializable {
    @Column
     private int person;
 
-    @ManyToOne(targetEntity = Difficulty.class)
-    @JoinColumn(name="difficulty_fk")
-    private Difficulty difficulty;
-
-    @ManyToOne(targetEntity = Budget.class)
-    @JoinColumn(name="budget_fk")
-    private Budget budget;
-
-    @ManyToOne(targetEntity = Criteria.class)
-    @JoinColumn(name="criteria_fk")
-    private Criteria criteria;
-
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_fk")
     private User user;
@@ -49,29 +37,23 @@ public class Recipe implements Serializable {
     public Recipe() {
     }
 
-    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, Difficulty difficulty, Budget budget, Criteria criteria, User user, List<Ingredient> ingredientList) {
+    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, User user, List<Ingredient> ingredientList) {
         this.id = id;
         this.title = title;
         this.pictureUrl = pictureUrl;
         this.time = time;
         this.steps = steps;
         this.person = person;
-        this.difficulty = difficulty;
-        this.budget = budget;
-        this.criteria = criteria;
         this.user = user;
         this.ingredientList = ingredientList;
     }
 
-    public Recipe(String title, String pictureUrl, String time, String steps, int person, Difficulty difficulty, Budget budget, Criteria criteria, User user, List<Ingredient> ingredientList) {
+    public Recipe(String title, String pictureUrl, String time, String steps, int person, User user, List<Ingredient> ingredientList) {
         this.title = title;
         this.pictureUrl = pictureUrl;
         this.time = time;
         this.steps = steps;
         this.person = person;
-        this.difficulty = difficulty;
-        this.budget = budget;
-        this.criteria = criteria;
         this.user = user;
         this.ingredientList = ingredientList;
     }
@@ -122,30 +104,6 @@ public class Recipe implements Serializable {
 
     public void setPerson(int person) {
         this.person = person;
-    }
-
-    public Difficulty getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public Budget getBudget() {
-        return budget;
-    }
-
-    public void setBudget(Budget budget) {
-        this.budget = budget;
-    }
-
-    public Criteria getCriteria() {
-        return criteria;
-    }
-
-    public void setCriteria(Criteria criteria) {
-        this.criteria = criteria;
     }
 
     public User getUser() {
