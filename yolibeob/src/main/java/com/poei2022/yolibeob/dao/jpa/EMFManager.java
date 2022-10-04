@@ -8,7 +8,6 @@ public class EMFManager {
     private static EntityManagerFactory EMF_SINGLETON = null;
 
     private EMFManager() {
-        // avoid instantiation
     }
 
     public static EntityManagerFactory getEmf(){
