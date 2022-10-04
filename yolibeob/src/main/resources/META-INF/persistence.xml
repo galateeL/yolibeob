@@ -8,9 +8,9 @@
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.user" value="root"/>
-            <property name="hibernate.connection.password" value="Pepemat1991!"/>
+            <property name="hibernate.connection.password" value="2345"/>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3309/yolibeob"/>
+                      value="jdbc:mysql://localhost:3307/yolibeob"/>
             <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
