@@ -5,7 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-  <title>Yolibeob | <c:out value="${recipe.title}"></c:out></title>
+  <title>Yolibeob | ${recipe.title}</title>
 </head>
 <body>
 <div class="container">
@@ -21,7 +21,7 @@
         <img src="${recipe.pictureUrl}" width="80%" height="80%">
         <h1 class="card-title">${recipe.title}</h1>
         <h3>Recipe by : ${recipe.user.firstName}</h3>
-        <p>It will take you : <c:out value="${recipe.time}"></c:out></p>
+        <p>It will take you : ${recipe.time}</p>
         <div>
 
           <p>For : ${recipe.person} persons</p>
@@ -34,6 +34,7 @@
           </c:forEach>
 
           <article>
+            <h2> Steps :</h2>
             <c:out value="${recipe.steps}"></c:out>
           </article>
 
