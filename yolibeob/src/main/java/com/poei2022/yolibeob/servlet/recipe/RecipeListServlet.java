@@ -1,12 +1,15 @@
 package com.poei2022.yolibeob.servlet.recipe;
 
+import com.poei2022.yolibeob.dao.DaoFactory;
 import com.poei2022.yolibeob.dao.entity.Recipe;
+import com.poei2022.yolibeob.dao.jpa.EMFManager;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +22,7 @@ public class RecipeListServlet extends HttpServlet {
 
         List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAll();
 
-        req.setAttrabute("recipes", recipeList);
+        req.setAttribute("recipes", recipeList);
 
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/recipeList.jsp");
         rd.forward(req, resp);

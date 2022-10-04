@@ -10,19 +10,19 @@
 
     <h1>Recipes :</h1>
 
-    <a href="${pageContext.request.contextPath}/recipe/add">Add Recipe</a>
+    <a href="${pageContext.request.contextPath}/addRecipe">Add Recipe</a>
 
     <div>
-        <c:forEach items="${recipes}" var="recipe">
+        <c:forEach items="${RequestScope.recipes}" var="recipe">
 
             <div>
                 <div class>
-                    <img src="${recipe.pictureUrl}"alt="${island.name}">
+                    <img src="${recipe.pictureUrl}"alt="${recipe.title}">
                     <div>
-                        <h5>${recipe.name}</h5>
+                        <h5>${recipe.title}</h5>
                     </div>
                     <div >
-                        <a href="${pageContext.request.contextPath}/edit?id=${island.id}">Edit</a>
+                        <a href="${pageContext.request.contextPath}/edit?id=${recipe.id}">Edit</a>
 
                         <form action="${pageContext.request.contextPath}/delete-recipe" method="post">
                             <input hidden name="idRecipes" value="${recipe.id}">

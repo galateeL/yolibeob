@@ -1,5 +1,6 @@
 package com.poei2022.yolibeob.servlet.recipe;
 
+import com.poei2022.yolibeob.dao.DaoFactory;
 import com.poei2022.yolibeob.dao.entity.Recipe;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/recipe-details")
 public class RecipeDetailServlet extends HttpServlet {
@@ -16,7 +18,14 @@ public class RecipeDetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        try {
+        List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAll();
+
+        req.setAttribute("recipe", recipeList);
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/recipeDetail.jsp");
+        rd.forward(req, resp);
+
+
+        /*try {
             Long id = Long.parseLong(req.getParameter("id"));
 
             if(DaoFactory.getRecipeDAO().findById(id).isPresent()){
@@ -30,6 +39,6 @@ public class RecipeDetailServlet extends HttpServlet {
             req.setAttribute("error_format_id", true);
             RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/recipeDetail.jsp");
             rd.forward(req, resp);
-        }
+        }*/
     }
 }
