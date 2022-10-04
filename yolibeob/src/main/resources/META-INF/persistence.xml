@@ -12,7 +12,7 @@
 
             <property name="hibernate.connection.url"
                       value="jdbc:mysql://localhost:3307/yolibeob"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
 </persistence>

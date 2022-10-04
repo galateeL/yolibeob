@@ -2,38 +2,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
   <title>Yolibeob | <c:out value="${recipe.title}"></c:out></title>
 </head>
 <body>
 <div class="container">
 
-  <div>
+  <div class="row row-cols-1">
 
     <c:if test="${error_format_id}">
       <p>L'id est inconnu</p>
     </c:if>
 
-    <div>
-      <div>
-        <h1><c:out value="${recipe.title}"></c:out></h1>
-        <h3>Recipe by : <c:out value="${recipe.user.firstName}"></c:out></h3>
-        <p>Posted : <c:out value="${recipe.time}"></c:out></p>
+    <div class="col">
+      <div class=class="card-body">
+        <img src="${recipe.pictureUrl}" width="80%" height="80%">
+        <h1 class="card-title">${recipe.title}</h1>
+        <h3>Recipe by : ${recipe.user.firstName}</h3>
+        <p>It will take you : <c:out value="${recipe.time}"></c:out></p>
         <div>
-          <img src="${recipe.pictureUrl}" width="100%" height="100%">
 
-          <c:out value="${recipe.person}"></c:out>
+          <p>For : ${recipe.person} persons</p>
 
+          <h2>Ingredients :</h2>
           <c:forEach items="${recipes}" var="recipe">
 
             <c:out value="${recipe.ingredientList}"></c:out>
 
           </c:forEach>
 
-
           <article>
             <c:out value="${recipe.steps}"></c:out>
           </article>
-
 
         </div>
 

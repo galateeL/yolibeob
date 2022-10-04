@@ -2,7 +2,6 @@ package com.poei2022.yolibeob.servlet.recipe;
 
 import com.poei2022.yolibeob.dao.DaoFactory;
 import com.poei2022.yolibeob.dao.entity.Recipe;
-import com.poei2022.yolibeob.dao.jpa.EMFManager;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
