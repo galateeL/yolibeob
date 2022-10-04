@@ -10,7 +10,7 @@ public class EMFManager {
     private EMFManager() {
     }
 
-    public static EntityManagerFactory getEmf(){
+    public static EntityManagerFactory getEMF(){
 
         if (EMF_SINGLETON == null) {
             try {
