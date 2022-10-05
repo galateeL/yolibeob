@@ -7,7 +7,13 @@ import java.util.Optional;
 
 public interface RecipeDAO {
     List<Recipe> findAll();
+    List<Recipe> findAllStarter();
 
+    List<Recipe> findAllDessert();
+
+    List<Recipe> findAllMainCourse();
+
+    List<Recipe> findAllDrink();
     boolean create(Recipe recipe);
 
     Optional<Recipe> findById(long idParam);

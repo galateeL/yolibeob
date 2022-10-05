@@ -77,7 +77,6 @@ public class Recipe implements Serializable {
         this.ingredientRecipeList = ingredientRecipeList;
     }
 
-
     public long getId() {
         return id;
     }
