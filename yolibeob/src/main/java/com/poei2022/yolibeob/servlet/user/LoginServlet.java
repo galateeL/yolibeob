@@ -46,17 +46,25 @@ public class LoginServlet extends HttpServlet {
         List<User>users =DaoFactory.getUserDAO().findAll();
         try {
             String message="";
-            for (User user : users){
-                if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
-                    req.getSession().setAttribute("user",user);
-                }else{
-                    message = "Connexion failed, wrong email or password !";
-                    req.setAttribute("error", message);
-                    this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp")
-                            .forward(req, resp);
-                }
+            if(users.isEmpty()) {
+                message = "Connexion failed, wrong email or password !";
+                req.setAttribute("error", message);
+                this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp")
+                        .forward(req, resp);
+            } else {
+                for (User user : users){
+                    if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
+                        req.getSession().setAttribute("user",user);
+                    }else{
+                        message = "Connexion failed, wrong email or password !";
+                        req.setAttribute("error", message);
+                        this.getServletContext().getRequestDispatcher("/WEB-INF/user/login.jsp")
+                                .forward(req, resp);
+                    }
 
+                }
             }
+
 
         }catch (Exception e){
             req.setAttribute("error",true);
