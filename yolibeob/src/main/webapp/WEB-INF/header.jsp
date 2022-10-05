@@ -28,9 +28,41 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/dessert">Desserts</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/drink">Boissons</a></li>
             </ul>
+
+          </li>
+          <c:if test = "${sessionScope.user == null}">
+          <li class="nav-item ms-2">
+            <a style="color: #1ed3a6" class="nav-link" href="${pageContext.request.contextPath}/addUser">Register</a>
+            </c:if>
+            <c:if test = "${sessionScope.user != null}" var="condition">
+          <li class="nav-item dropdown">
+            <a  style="color: #1ed3a6" class="nav-link dropdown-toggle" href="#" id="btAdmin" role="button"
+                data-bs-toggle="dropdown">Profil</a>
+            <ul class="dropdown-menu" aria-labelledby="btAdmin">
+              <li><a class="dropdown-item"  style="color: #1ed3a6"
+                     href="${pageContext.request.contextPath}/auth/editUser?id=${user.id}">Edit User</a></li>
+              <li><a class="dropdown-item"  style="color: #1ed3a6"
+                     href="${pageContext.request.contextPath}/auth/detailUser?id=${user.id}">Detail User</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: #1ed3a6" href="${pageContext.request.contextPath}/logout">Logout</a>
+          </li>
+          </c:if>
+          <c:if test="${!condition}">
+            <li class="nav-item">
+              <a class="nav-link" style="color: #1ed3a6" href="${pageContext.request.contextPath}/login">Login</a>
+            </li>
+          </c:if>
+
+
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
 </header>
+
+
