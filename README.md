@@ -14,6 +14,19 @@ It use a database which will store all recipes and ingredients added by a connec
 
 In there, you'll need to create an account to be able to create or delete a recipe but for people who don't want to be registed, you'll be able to read every recipes without any problem !
 
+## How to use
+
+### Step 1
+
+- Go to /populate
+
+### Step 2
+
+- Go to /home
+
+You're ready to use Yolibeob ! <br>
+Bon appétit !
+
 ## Features
 
 ### While not connected :
