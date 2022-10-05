@@ -14,11 +14,13 @@
 </head>
 <body>
 
+<jsp:include page="header.jsp"></jsp:include>
+
 <div class="container mb-5">
 
   <div class="row d-flex justify-content-center" >
     <img class="col-9" id="addIngredient-banner" src="https://images.unsplash.com/photo-1582138079863-ec3e671f59d7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80" alt="">
-
+    <div class="col-9" style="background-color: #03ad6e; height: 20px"></div>
   <div class="col-9" id="addIngredient-bg">
     <h1 style="font-family: 'Ubuntu', sans-serif; color: #ff5630" class="m-5">Add ingredients</h1>
 
