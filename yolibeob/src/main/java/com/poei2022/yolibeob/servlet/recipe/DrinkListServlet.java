@@ -12,17 +12,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/category/dessert")
-public class DessertListServlet extends HttpServlet {
+@WebServlet("/category/drink")
+public class DrinkListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAllDessert();
+        List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAllDrink();
 
         req.setAttribute("recipes", recipeList);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/dessertList.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/drinkList.jsp");
         rd.forward(req, resp);
     }
 }

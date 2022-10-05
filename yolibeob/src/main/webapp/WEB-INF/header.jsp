@@ -23,10 +23,10 @@
               Recettes par categories
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#${pageContext.request.contextPath}/category/starter">Entrees</a></li>
-              <li><a class="dropdown-item" href="#${pageContext.request.contextPath}/category/main-course">Plats</a></li>
-              <li><a class="dropdown-item" href="#">Desserts</a></li>
-              <li><a class="dropdown-item" href="#">Boissons</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/starter">Entrees</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/main-course">Plats</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/dessert">Desserts</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/drink">Boissons</a></li>
             </ul>
           </li>
         </ul>

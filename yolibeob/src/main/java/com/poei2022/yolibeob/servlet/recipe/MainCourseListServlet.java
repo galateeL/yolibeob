@@ -17,7 +17,7 @@ public class MainCourseListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAll();
+        List<Recipe> recipeList = DaoFactory.getRecipeDAO().findAllMainCourse();
 
         req.setAttribute("recipes", recipeList);
 

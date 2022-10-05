@@ -27,12 +27,45 @@ public class JpaRecipeDAO implements RecipeDAO {
         EntityManagerFactory emf = EMFManager.getEMF();
         EntityManager em = emf.createEntityManager();
         List<Recipe> recipes = null;
-        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = Entree")
+        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = 'Starter'", Recipe.class)
                 .getResultList();
-
 
         return recipes;
     }
+
+    @Override
+    public List<Recipe> findAllDessert(){
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        List<Recipe> recipes = null;
+        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = 'Dessert'", Recipe.class)
+                .getResultList();
+
+        return recipes;
+    }
+
+    @Override
+    public List<Recipe> findAllMainCourse(){
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        List<Recipe> recipes = null;
+        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = 'Main course'", Recipe.class)
+                .getResultList();
+
+        return recipes;
+    }
+
+    @Override
+    public List<Recipe> findAllDrink(){
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        List<Recipe> recipes = null;
+        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = 'Drink'", Recipe.class)
+                .getResultList();
+
+        return recipes;
+    }
+
 
     @Override
     public boolean create(Recipe recipe) {
