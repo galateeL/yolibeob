@@ -7,7 +7,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
-    <title>Recipe List</title>
+    <title>Starter List</title>
 </head>
 <body>
 
@@ -31,10 +31,8 @@
                     <div class="card-footer">
                         <a href="${pageContext.request.contextPath}/edit?id=${recipe.id}" class="btn btn-primary">Edit</a>
 
-                        <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post">
-                            <input hidden name="idRecipe" value="${recipe.id}">
-                            <c:out value="${recipe.id}"/>
-
+                        <form action="${pageContext.request.contextPath}/delete-recipe" method="post">
+                            <input hidden name="idRecipes" value="${recipe.id}">
                             <button class="btn btn-secondary" type="submit">Delete</button>
                             <a class="btn btn-secondary" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
                         </form>
