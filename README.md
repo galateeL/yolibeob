@@ -19,15 +19,20 @@ In there, you'll need to create an account to be able to create or delete a reci
 ### While not connected :
 
 - View a list of all recipes
-- View a list of recipes by category (example : Dessert only)
 - Read a selected recipe
 
 ### While connected :
 
 - All features listed above
+- View a list of recipes by category (example : Dessert only)
 - Add a recipe
 - Delete a recipe
 - Manage your account
+
+### Comming Soon :
+
+- Search a recipe by keywords (Muffin, Burger...)
+- Request a random recipe (based on time and history less than 6 days)
 
 ## Tools
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com) 
