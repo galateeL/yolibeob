@@ -86,9 +86,15 @@ public class JpaUserDAO implements UserDAO {
         EntityTransaction et = em.getTransaction();
         try{
             em.getTransaction().begin();
-            Query query =em.createQuery("UPDATE User u SET u.lastName = :lastName WHERE u.id = :id");
+            Query query =em.createQuery("UPDATE User u SET u.lastName = :lastName,u.firstName = :firstName,u" +
+                    ".avatarUrl= :avatarUrl, u.password= :password WHERE " +
+                    "u" +
+                    ".id = :id");
             query.setParameter("id", userToEdit.getId());
             query.setParameter("lastName", userToEdit.getLastName());
+            query.setParameter("firstName", userToEdit.getFirstName());
+            query.setParameter("avatarUrl", userToEdit.getAvatarUrl());
+            query.setParameter("password", userToEdit.getPassword());
             query.executeUpdate();
             et.commit();
         }catch(Exception e ){

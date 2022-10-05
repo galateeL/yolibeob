@@ -1,9 +1,6 @@
 package com.poei2022.yolibeob.dao;
 
-import com.poei2022.yolibeob.dao.jpa.JpaCookedRecipeDAO;
-import com.poei2022.yolibeob.dao.jpa.JpaIngredientDAO;
-import com.poei2022.yolibeob.dao.jpa.JpaRecipeDAO;
-import com.poei2022.yolibeob.dao.jpa.JpaUserDAO;
+import com.poei2022.yolibeob.dao.jpa.*;
 
 public class DaoFactory {
     public static CookedRecipeDAO getCookedRecipeDAO() {
