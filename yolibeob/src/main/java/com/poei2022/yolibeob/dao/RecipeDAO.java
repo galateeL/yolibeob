@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public interface RecipeDAO {
     List<Recipe> findAll();
+    List<Recipe> findAllStarter();
 
     boolean create(Recipe recipe);
 

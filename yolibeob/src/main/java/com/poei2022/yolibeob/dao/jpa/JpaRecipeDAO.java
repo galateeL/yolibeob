@@ -23,6 +23,18 @@ public class JpaRecipeDAO implements RecipeDAO {
     }
 
     @Override
+    public List<Recipe> findAllStarter(){
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        List<Recipe> recipes = null;
+        recipes = em.createQuery("select r from Recipe r WHERE r.criteria = Entree")
+                .getResultList();
+
+
+        return recipes;
+    }
+
+    @Override
     public boolean create(Recipe recipe) {
 
         EntityManagerFactory emf = EMFManager.getEMF();
