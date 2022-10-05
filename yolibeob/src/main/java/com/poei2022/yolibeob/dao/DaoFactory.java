@@ -15,7 +15,7 @@ public class DaoFactory {
         return new JpaIngredientDAO();
     }
 
-    public static RecipeDAO getIslandDAO() {
+    public static RecipeDAO getRecipeDAO() {
 
         return new JpaRecipeDAO();
     }
