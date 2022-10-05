@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class JpaRecipeDAO implements RecipeDAO {
+
     @Override
     public List<Recipe> findAll(){
         EntityManagerFactory emf = EMFManager.getEMF();

@@ -22,6 +22,7 @@ public class DrinkListServlet extends HttpServlet {
         req.setAttribute("recipes", recipeList);
 
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/drinkList.jsp");
+
         rd.forward(req, resp);
     }
 }
