@@ -1,5 +1,7 @@
 package com.poei2022.yolibeob.dao.entity;
 
+import jakarta.validation.constraints.Size;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -21,23 +23,22 @@ public class Recipe implements Serializable {
    @Column
     private String time;
 
-   @Column
+
+   @Lob
+   @Column(length=2012)
     private String steps;
 
    @Column
     private int person;
-
 
    @Column
    private String difficulty;
 
    @Column
    private String budget;
-
-
+   
    @Column
    private String criteria;
-
 
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_fk")
