@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/addIngredient")
+@WebServlet("/auth/addIngredient")
 public class AddIngredient extends HttpServlet {
 
     @Override

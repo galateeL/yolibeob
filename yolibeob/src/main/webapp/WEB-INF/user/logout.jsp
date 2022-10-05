@@ -12,7 +12,7 @@
   <%@ include file="../header.jsp" %>
 </header>
 <div class="container" style="background:transparent url('https://sauvageboris.fr/training/javaee/carEE/resources/img/blur.jpg')">
-  <div class="row">
+  <div class="row vh-100 justify-content-space-between align-items-center ">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card border-0 rounded-3 my-5">
         <div class="card-body p-4 p-sm-5">
@@ -29,7 +29,6 @@
     </div>
   </div>
 </div>
-<footer>
-</footer>
+<%@ include file="../footer.jsp" %>
 </body>
 </html>
