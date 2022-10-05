@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <body>
-<nav class="navbar navbar-expand-lg  static-top">
+<nav class="navbar navbar-expand-lg bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img class="float-start" src="https://sauvageboris.fr/training/javaee/recipeEE/resources/logo/60.png" alt="Car">
