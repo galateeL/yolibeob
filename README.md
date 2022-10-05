@@ -18,9 +18,20 @@ In there, you'll need to create an account to be able to create or delete a reci
 
 ### Step 1
 
-- Go to /populate
+- In the persistence.xml put your SGBD informations where you see "TO EDIT"
+```java
+<property name="hibernate.connection.user" value="TO EDIT"/>
+            <property name="hibernate.connection.password" value="TO EDIT"/>
+            <property name="hibernate.connection.url"
+                      value="jdbc:mysql://localhost:TO EDIT/yolibeob"/> 
+```
+- The first value to change is your SGBD username, then the password and the localhost port number.
 
 ### Step 2
+
+- Go to /populate
+
+### Step 3
 
 - Go to /home
 
