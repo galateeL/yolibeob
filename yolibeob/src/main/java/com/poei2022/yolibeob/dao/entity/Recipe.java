@@ -39,17 +39,12 @@ public class Recipe implements Serializable {
    private String criteria;
 
 
-
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_fk")
     private User user;
 
-
     @OneToMany(mappedBy = "recipe" )
     private List<IngredientRecipe> ingredientRecipeList;
-
-   /* @ManyToMany
-    private List<Ingredient> ingredientList;*/
 
     public Recipe() {
     }
