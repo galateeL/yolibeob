@@ -2,7 +2,6 @@ package com.poei2022.yolibeob.dao.jpa;
 
 import com.poei2022.yolibeob.dao.IngredientDAO;
 import com.poei2022.yolibeob.dao.entity.Ingredient;
-import com.poei2022.yolibeob.dao.entity.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,7 +16,7 @@ public class JpaIngredientDAO implements IngredientDAO {
         EntityManagerFactory emf = EMFManager.getEMF();
         EntityManager em = emf.createEntityManager();
         List<Ingredient> ingredients = null;
-        ingredients = em.createQuery("select i from Ingredient i")
+        ingredients = em.createQuery("select i from Ingredient i", Ingredient.class)
                 .getResultList();
         return ingredients;
     }
@@ -99,5 +98,22 @@ public class JpaIngredientDAO implements IngredientDAO {
             em.close();
         }
         return false;
+    }
+
+    @Override
+    public Optional<Ingredient> findByName(String name){
+        Ingredient ingredient = null;
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        try {
+            ingredient = em.createQuery("select i from Ingredient i where i.title = :name", Ingredient.class)
+                    .setParameter("name", name)
+                    .getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return Optional.ofNullable(ingredient);
     }
 }
