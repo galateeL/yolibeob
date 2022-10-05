@@ -9,14 +9,43 @@
 </head>
 <body>
 
-<p>Do you really want to remove the recipe ${recipeId} ?</p>
+<jsp:include page="header.jsp"></jsp:include>
 
-<form action="${pageContext.request.contextPath}/deliteRecipe" method="post">
-    <input hidden value="${recipe.id}" name="recipeId">
+<!--<p>Do you really want to remove the recipe ${recipeId} ?</p>
+
+<form action="${pageContext.request.contextPath}/deleteRecipe?recipeId=${idRecipe}" method="post">
+    <input hidden value="${idRecipe}" name="idRecipe">
     <button type="submit">YES</button>
 </form>
 
 <form action="${pageContext.request.contextPath}/recipes" method="get">
     <button type="submit">NO</button>
-</form>
+</form>-->
+
+
+<div class="container" style="background:transparent url('https://sauvageboris.fr/training/javaee/carEE/resources/img/blur.jpg')">
+  <div class="row">
+<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+    <div class="card border-0 rounded-3 my-5">
+
+        <div class="card-body p-4 p-sm-5">
+            <h3 class="card-title text-align-center mb-5">Do you really want to remove the recipe ${recipeId} ?</h3>
+
+            <form action="${pageContext.request.contextPath}/deleteRecipe?recipeId=${idRecipe}" method="post" class="d-flex">
+                    <input hidden value="${idRecipe}" name="idRecipe">
+                    <button class="col-3 btn btn-success btn-login text-uppercase fw-bold" type="submit">YES</button>
+            </form>
+            <form action="${pageContext.request.contextPath}/recipes" method="get">
+                <button type="submit" class=" col-3 btn btn-danger btn-login text-uppercase fw-bold">NO</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+
+
 

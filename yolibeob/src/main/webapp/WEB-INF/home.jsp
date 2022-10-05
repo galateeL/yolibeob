@@ -40,11 +40,13 @@
 
               <!--<a href="${pageContext.request.contextPath}/edit?id=${recipe.id}" class="btn btn-primary me-2" style="height:38px ">Edit</a>-->
 
-            <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post" class="mt-3">
+           <!-- <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post" class="mt-3">
               <input hidden name="idRecipe" value="${recipe.id}">
-              <button class="btn" type="submit" style="background-color: #FF5630FF; color: white">Delete</button>
-              <a class="btn" style="color: white; background-color: #03AD6EFF" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
+              <button class="btn" type="submit" style="background-color: #FF5630FF; color: white">Delete</button>-->
+
             </form>
+
+            <a class="btn" style="color: white; background-color: #03AD6EFF" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
 
           </div>
 
