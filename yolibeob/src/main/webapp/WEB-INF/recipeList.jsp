@@ -31,7 +31,6 @@
             <h1 class="m-5" style="font-family: 'Ubuntu', sans-serif;">Recipes</h1>
         </div>
 
-
     <div class="row">
         <c:forEach items="${recipes}" var="recipe">
 
@@ -44,12 +43,18 @@
                     <div class="card-footer d-flex justify-content-center">
                        <!-- <a href="${pageContext.request.contextPath}/edit?id=${recipe.id}" class="btn btn-primary">Edit</a>-->
 
-                        <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post" class="mb-3">
+                       <!-- <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post" class="mb-3">
                             <input hidden name="idRecipe" value="${recipe.id}">
-
                             <button class="btn" style="background-color: #FF5630FF; color: white" type="submit">Delete</button>
-                            <a class="btn" style="color: white; background-color: #03AD6EFF" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
-                        </form>
+
+                        </form>-->
+
+
+                        <c:if test="${not empty sessionScope.email && not empty sessionScope.password}">
+                        <a class="btn" style="color: white; background-color: #03AD6EFF" href="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}">Delete</a>
+                        </c:if>
+
+                        <a class="btn" style="color: white; background-color: #03AD6EFF" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
                     </div>
                 </div>
             </div>
