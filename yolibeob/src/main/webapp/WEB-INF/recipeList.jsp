@@ -31,8 +31,10 @@
                     <div class="card-footer">
                         <a href="${pageContext.request.contextPath}/edit?id=${recipe.id}" class="btn btn-primary">Edit</a>
 
-                        <form action="${pageContext.request.contextPath}/delete-recipe" method="post">
-                            <input hidden name="idRecipes" value="${recipe.id}">
+                        <form action="${pageContext.request.contextPath}/deleteRecipe?idRecipe=${recipe.id}" method="post">
+                            <input hidden name="idRecipe" value="${recipe.id}">
+                            <c:out value="${recipe.id}"/>
+
                             <button class="btn btn-secondary" type="submit">Delete</button>
                             <a class="btn btn-secondary" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Details</a>
                         </form>
