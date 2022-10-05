@@ -31,6 +31,8 @@
             <label for="person">Nb persons</label>
             <input id="person" type="text" name="person">
 
+            
+
 
             <button type="submit">Create</button>
         </form>
