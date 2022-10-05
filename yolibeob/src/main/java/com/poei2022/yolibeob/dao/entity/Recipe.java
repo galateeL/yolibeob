@@ -27,6 +27,19 @@ public class Recipe implements Serializable {
    @Column
     private int person;
 
+
+   @Column
+   private String difficulty;
+
+   @Column
+   private String budget;
+
+
+   @Column
+   private String criteria;
+
+
+
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_fk")
     private User user;
@@ -38,30 +51,36 @@ public class Recipe implements Serializable {
    /* @ManyToMany
     private List<Ingredient> ingredientList;*/
 
-
     public Recipe() {
     }
 
-    public Recipe(String title, String pictureUrl, String time, String steps, int person, User user, List<IngredientRecipe> ingredientRecipeList) {
-        this.title = title;
-        this.pictureUrl = pictureUrl;
-        this.time = time;
-        this.steps = steps;
-        this.person = person;
-        this.user = user;
-        this.ingredientRecipeList = ingredientRecipeList;
-    }
-
-    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, User user, List<IngredientRecipe> ingredientRecipeList) {
+    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, String difficulty, String budget, String criteria, User user, List<IngredientRecipe> ingredientRecipeList) {
         this.id = id;
         this.title = title;
         this.pictureUrl = pictureUrl;
         this.time = time;
         this.steps = steps;
         this.person = person;
+        this.difficulty = difficulty;
+        this.budget = budget;
+        this.criteria = criteria;
         this.user = user;
         this.ingredientRecipeList = ingredientRecipeList;
     }
+
+    public Recipe(String title, String pictureUrl, String time, String steps, int person, String difficulty, String budget, String criteria, User user, List<IngredientRecipe> ingredientRecipeList) {
+        this.title = title;
+        this.pictureUrl = pictureUrl;
+        this.time = time;
+        this.steps = steps;
+        this.person = person;
+        this.difficulty = difficulty;
+        this.budget = budget;
+        this.criteria = criteria;
+        this.user = user;
+        this.ingredientRecipeList = ingredientRecipeList;
+    }
+
 
     public long getId() {
         return id;
@@ -109,6 +128,30 @@ public class Recipe implements Serializable {
 
     public void setPerson(int person) {
         this.person = person;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getBudget() {
+        return budget;
+    }
+
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
+
+    public String getCriteria() {
+        return criteria;
+    }
+
+    public void setCriteria(String criteria) {
+        this.criteria = criteria;
     }
 
     public User getUser() {

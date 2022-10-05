@@ -28,11 +28,15 @@
 
 <ul>
 <c:forEach items="${ingredientsRecipe}" var="ingredientRecipe">
-  <li><c:out value="${ingredientRecipe.ingredient.title}"/></li>
-  <li><c:out value="${ingredientRecipe.quantity}"/></li>
-  <li><c:out value="${ingredientRecipe.unity}"/></li>
+  <li><c:out value="${ingredientRecipe.quantity}"/> <c:out value="${ingredientRecipe.unity}"/> <c:out value="${ingredientRecipe.ingredient.title}"/></li>
 </c:forEach>
 </ul>
+
+
+  <a class="btn btn-secondary" href="${pageContext.request.contextPath}/recipe-details?id=${recipe.id}">Publish my recipe</a>
+</form>
+
+
 
 
 

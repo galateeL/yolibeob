@@ -96,7 +96,6 @@ public class JpaIngredientRecipeDAO implements IngredientRecipeDAO {
         return ingredientRecipes;
     }
 
-
     @Override
     public boolean deleteByRecipe(Recipe recipe){
         EntityManagerFactory emf = EMFManager.getEMF();
@@ -106,7 +105,7 @@ public class JpaIngredientRecipeDAO implements IngredientRecipeDAO {
             et.begin();
             List<IngredientRecipe> ingredientRecipeList = findByRecipe(recipe);
             for (IngredientRecipe ingredientRecipe : ingredientRecipeList) {
-                em.remove(ingredientRecipe);
+                em.remove(em.contains(ingredientRecipe) ? ingredientRecipe : em.merge(ingredientRecipe));
             }
             et.commit();
             return true;

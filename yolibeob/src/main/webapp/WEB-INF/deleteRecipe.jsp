@@ -8,11 +8,10 @@
 </head>
 <body>
 
-
 <p>Do you really want to remove the recipe ${recipeId} ?</p>
 
 <form action="${pageContext.request.contextPath}/deliteRecipe" method="post">
-    <input hidden value="${recipeId}" name="recipeId">
+    <input hidden value="${recipe.id}" name="recipeId">
     <button type="submit">YES</button>
 </form>
 

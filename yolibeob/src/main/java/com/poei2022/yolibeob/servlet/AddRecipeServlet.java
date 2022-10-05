@@ -39,6 +39,10 @@ public class AddRecipeServlet extends HttpServlet {
         String userId = req.getParameter("user");
         String ingredients = req.getParameter("ingredient");
 
+        String difficulty = req.getParameter("difficulty");
+        String budget = req.getParameter("budget");
+        String criteria = req.getParameter("criteria");
+
 
         Recipe recipe = null;
         try {
@@ -48,7 +52,7 @@ public class AddRecipeServlet extends HttpServlet {
             recipe = new Recipe(
                     title,
                     pictureUrl,
-                    time, steps, person, null, null);
+                    time, steps, person, difficulty, budget, criteria, null, null);
 
             DaoFactory.getRecipeDAO().create(recipe);
         }catch (Exception e){

@@ -45,6 +45,12 @@ public class EditRecipeServlet extends HttpServlet {
         String userId = req.getParameter("user");
         String ingredients = req.getParameter("ingredient");
 
+        String difficulty = req.getParameter("difficulty");
+        String budget = req.getParameter("budget");
+        String criteria = req.getParameter("criteria");
+
+
+
         String ingredientId = req.getParameter("ingredientId");
 
         try {
@@ -54,7 +60,7 @@ public class EditRecipeServlet extends HttpServlet {
             Optional<Ingredient> optionalIngredient = DaoFactory.getIngredientDAO().findById(Long.parseLong(ingredientId));
             Ingredient ingredient = optionalIngredient.get();
 
-            DaoFactory.getRecipeDAO().edit(new Recipe(title, pictureUrl, time, steps,person, null, null));
+            DaoFactory.getRecipeDAO().edit(new Recipe(title, pictureUrl, time, steps,person, difficulty, budget, criteria,null, null));
 
 
         } catch(Exception e) {

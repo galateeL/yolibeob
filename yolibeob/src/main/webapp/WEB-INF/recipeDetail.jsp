@@ -21,17 +21,26 @@
         <img src="${recipe.pictureUrl}" width="80%" height="80%">
         <h1 class="card-title">${recipe.title}</h1>
         <h3>Recipe by : ${recipe.user.firstName}</h3>
-        <p>It will take you : ${recipe.time}</p>
+        <p>It will take you : ${recipe.time} minutes</p>
         <div>
 
           <p>For : ${recipe.person} persons</p>
+          <p>Budget : ${recipe.budget}</p>
+          <p>Category : ${recipe.criteria}</p>
+          <p>Difficulty : ${recipe.difficulty}</p>
 
           <h2>Ingredients :</h2>
-          <c:forEach items="${recipes}" var="recipe">
+          <ul>
+            <c:forEach items="${ingredientsRecipe}" var="ingredientRecipe">
+              <li><c:out value="${ingredientRecipe.quantity}"/> <c:out value="${ingredientRecipe.unity}"/> <c:out value="${ingredientRecipe.ingredient.title}"/></li>
+            </c:forEach>
+          </ul>
 
-            <c:out value="${recipe.ingredientList}"></c:out>
 
-          </c:forEach>
+
+
+
+
 
           <article>
             <h2> Steps :</h2>

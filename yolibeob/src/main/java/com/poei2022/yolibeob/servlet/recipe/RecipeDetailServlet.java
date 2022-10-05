@@ -1,6 +1,8 @@
 package com.poei2022.yolibeob.servlet.recipe;
 
 import com.poei2022.yolibeob.dao.DaoFactory;
+import com.poei2022.yolibeob.dao.entity.Ingredient;
+import com.poei2022.yolibeob.dao.entity.IngredientRecipe;
 import com.poei2022.yolibeob.dao.entity.Recipe;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -18,12 +20,23 @@ public class RecipeDetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        List<Ingredient> ingredientList = DaoFactory.getIngredientDAO().findAll();
+
+
         try {
             Long id = Long.parseLong(req.getParameter("id"));
 
             if(DaoFactory.getRecipeDAO().findById(id).isPresent()){
                 Recipe recipe = DaoFactory.getRecipeDAO().findById(id).get();
                 req.setAttribute("recipe", recipe);
+
+
+                List<IngredientRecipe> ingredientRecipes = DaoFactory.getIngredientRecipeDAO().findByRecipe(recipe);
+                req.setAttribute("ingredientsRecipe", ingredientRecipes);
+                req.setAttribute("ingredients", ingredientList);
+
+
+
             } else {
                 System.out.println("Recipe not found");
             }
