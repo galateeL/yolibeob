@@ -3,9 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <link href="../header.css" type="text/css" rel="stylesheet"/>
-    <title>Edit Category</title>
     <title>Yolibeob | Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -20,7 +17,7 @@
 
   <%@ include file="./header.jsp" %>
 
-<div class="container" id="home-container">
+<div class="container mt-5" id="home-container">
 
   <img class="col-12" src="https://images.unsplash.com/photo-1657299156538-e08595d224ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" id="home-banner">
   <div class="col-12" style="background-color: #ff5630; height: 20px"></div>
@@ -55,11 +52,7 @@
       </div>
     </c:forEach>
   </div>
-
 </div>
-
-
-
-
+  <%@ include file="./footer.jsp" %>
 </body>
 </html>
