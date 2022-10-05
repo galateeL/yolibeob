@@ -2,7 +2,7 @@
 <img src="https://sauvageboris.fr/training/javaee/recipeEE/resources/logo/100.png"/>
 </p>
 
-# Yolibeob
+# Yolibeob<img src="https://cdn-icons-png.flaticon.com/512/599/599503.png" width="26" height="26" />
 
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
 
