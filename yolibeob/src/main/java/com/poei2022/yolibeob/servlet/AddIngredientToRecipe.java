@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/addIngredientToRecipe")
+@WebServlet("/auth/addIngredientToRecipe")
 public class AddIngredientToRecipe extends HttpServlet {
 
     @Override
@@ -73,6 +73,6 @@ public class AddIngredientToRecipe extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect(req.getContextPath() + "/addIngredientToRecipe?id=" + idStr);
+        resp.sendRedirect(req.getContextPath() + "/auth/addIngredientToRecipe?id=" + idStr);
     }
 }

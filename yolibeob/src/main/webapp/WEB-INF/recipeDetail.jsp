@@ -22,17 +22,12 @@
     <c:if test="${error_format_id}">
         <p>L'id est inconnu</p>
     </c:if>
-    <div class="row">
-
+    <div class="row justify-content-center">
         <div class="col-6">
-
             <div class="card mb-3">
                 <h1 class="card-title m-3" style="font-family: 'Pacifico', cursive; color: #03ad6e">${recipe.title}</h1>
-
                 <img src="${recipe.pictureUrl}" class="card-img-top" alt="" style="object-fit: cover; height: 300px">
                 <div class="card-body">
-
-
                     <p class="card-text"><span style="color:#03AD6EFF">Recipe by : </span>${recipe.user.firstName}</p>
                     <p class="card-text"><span style="color:#03AD6EFF">It will take you : </span>${recipe.time} minutes
                     </p>
@@ -40,7 +35,6 @@
                     <p class="card-text"><span style="color:#03AD6EFF">Budget : </span>${recipe.budget}</p>
                     <p class="card-text"><span style="color:#03AD6EFF">Category : </span>${recipe.criteria}</p>
                     <p class="card-text"><span style="color:#03AD6EFF">Difficulty : </span>${recipe.difficulty}</p>
-
                     <h5 style="color: #03ad6e">Ingredients</h5>
                     <hr style="color:#03ad6e;"/>
                     <ul>
@@ -49,20 +43,14 @@
                                 <c:out value="${ingredientRecipe.ingredient.title}"/></li>
                         </c:forEach>
                     </ul>
-
                     <h5 style="color: #03ad6e">Steps</h5>
                     <hr style="color:#03ad6e;"/>
                     <p><c:out value="${recipe.steps}"></c:out></p>
-
                 </div>
-
-
             </div>
         </div>
-
     </div>
-
-
 </div>
+<%@ include file="./footer.jsp" %>
 </body>
 </html>

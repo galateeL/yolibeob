@@ -21,31 +21,32 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/recipes">Recipes</a>
                     </li>
                     <c:if test="${sessionScope.user != null}" var="condition">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/auth/addRecipes">Add Recipes</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath}/auth/addRecipe">Add Recipe</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Recipes by categories
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/starter">
+                                    Starters</a></li>
+                                <li><a class="dropdown-item"
+                                       href="${pageContext.request.contextPath}/category/main-course">Dishes</a>
+                                </li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/dessert">Desserts</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                       href="${pageContext.request.contextPath}/category/drink">Drinks</a></li>
+                            </ul>
+                        </li>
                     </c:if>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Recipes by categories
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/starter">
-                                Starters</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/main-course">Dishes</a>
-                            </li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/category/dessert">Desserts</a>
-                            </li>
-                            <li><a class="dropdown-item"
-                                   href="${pageContext.request.contextPath}/category/drink">Drinks</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown2">
-              <ul class="navbar-nav">
-                <c:if test="${sessionScope.user == null}">
+                <ul class="navbar-nav">
+                    <c:if test="${sessionScope.user == null}">
                     <li class="nav-item ms-2">
                         <a class="nav-link" href="${pageContext.request.contextPath}/addUser">Register</a>
                         </c:if>

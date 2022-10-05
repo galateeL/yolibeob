@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/addRecipe")
+@WebServlet("/auth/addRecipe")
 public class AddRecipeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -60,7 +60,7 @@ public class AddRecipeServlet extends HttpServlet {
             doGet(req,resp);
         }
 
-        resp.sendRedirect(req.getContextPath() + "/addIngredientToRecipe?id=" + recipe.getId());
+        resp.sendRedirect(req.getContextPath() + "/auth/addIngredientToRecipe?id=" + recipe.getId());
     }
 
 }
