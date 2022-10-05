@@ -1,0 +1,12 @@
+#recipes-banner {
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    height: 120px;
+}
+
+#recipes-container {
+    margin: 0;
+    margin:auto;
+}
+

@@ -1,7 +1,5 @@
 package com.poei2022.yolibeob.dao.entity;
 
-import jakarta.ws.rs.Consumes;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -34,6 +32,14 @@ public class User implements Serializable {
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
+        this.avatarUrl = avatarUrl;
+        this.password = password;
+    }
+
+    public User(long id,String lastName, String firstName, String avatarUrl, String password) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.avatarUrl = avatarUrl;
         this.password = password;
     }

@@ -1,5 +1,7 @@
 package com.poei2022.yolibeob.dao.entity;
 
+import jakarta.validation.constraints.Size;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -21,35 +23,34 @@ public class Recipe implements Serializable {
    @Column
     private String time;
 
-   @Column
+
+   @Lob
+   @Column(length=2012)
     private String steps;
 
    @Column
     private int person;
 
-    @ManyToOne(targetEntity = Difficulty.class)
-    @JoinColumn(name="difficulty_fk")
-    private Difficulty difficulty;
+   @Column
+   private String difficulty;
 
-    @ManyToOne(targetEntity = Budget.class)
-    @JoinColumn(name="budget_fk")
-    private Budget budget;
-
-    @ManyToOne(targetEntity = Criteria.class)
-    @JoinColumn(name="criteria_fk")
-    private Criteria criteria;
+   @Column
+   private String budget;
+   
+   @Column
+   private String criteria;
 
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_fk")
     private User user;
 
-    @ManyToMany(mappedBy = "recipeList")
-    private List<Ingredient> ingredientList;
+    @OneToMany(mappedBy = "recipe" )
+    private List<IngredientRecipe> ingredientRecipeList;
 
     public Recipe() {
     }
 
-    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, Difficulty difficulty, Budget budget, Criteria criteria, User user, List<Ingredient> ingredientList) {
+    public Recipe(long id, String title, String pictureUrl, String time, String steps, int person, String difficulty, String budget, String criteria, User user, List<IngredientRecipe> ingredientRecipeList) {
         this.id = id;
         this.title = title;
         this.pictureUrl = pictureUrl;
@@ -60,10 +61,10 @@ public class Recipe implements Serializable {
         this.budget = budget;
         this.criteria = criteria;
         this.user = user;
-        this.ingredientList = ingredientList;
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 
-    public Recipe(String title, String pictureUrl, String time, String steps, int person, Difficulty difficulty, Budget budget, Criteria criteria, User user, List<Ingredient> ingredientList) {
+    public Recipe(String title, String pictureUrl, String time, String steps, int person, String difficulty, String budget, String criteria, User user, List<IngredientRecipe> ingredientRecipeList) {
         this.title = title;
         this.pictureUrl = pictureUrl;
         this.time = time;
@@ -73,7 +74,7 @@ public class Recipe implements Serializable {
         this.budget = budget;
         this.criteria = criteria;
         this.user = user;
-        this.ingredientList = ingredientList;
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 
     public long getId() {
@@ -124,27 +125,27 @@ public class Recipe implements Serializable {
         this.person = person;
     }
 
-    public Difficulty getDifficulty() {
+    public String getDifficulty() {
         return difficulty;
     }
 
-    public void setDifficulty(Difficulty difficulty) {
+    public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
     }
 
-    public Budget getBudget() {
+    public String getBudget() {
         return budget;
     }
 
-    public void setBudget(Budget budget) {
+    public void setBudget(String budget) {
         this.budget = budget;
     }
 
-    public Criteria getCriteria() {
+    public String getCriteria() {
         return criteria;
     }
 
-    public void setCriteria(Criteria criteria) {
+    public void setCriteria(String criteria) {
         this.criteria = criteria;
     }
 
@@ -156,11 +157,11 @@ public class Recipe implements Serializable {
         this.user = user;
     }
 
-    public List<Ingredient> getIngredientList() {
-        return ingredientList;
+    public List<IngredientRecipe> getIngredientRecipeList() {
+        return ingredientRecipeList;
     }
 
-    public void setIngredientList(List<Ingredient> ingredientList) {
-        this.ingredientList = ingredientList;
+    public void setIngredientRecipeList(List<IngredientRecipe> ingredientRecipeList) {
+        this.ingredientRecipeList = ingredientRecipeList;
     }
 }
