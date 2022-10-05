@@ -2,11 +2,13 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-git.svg)](https://forthebadge.com)
 
+## What is Yolibeob
+
 Yolibeob or 요리법 is a web site where you can share your recipes with everybody !
 
-## Pour commencer
+It need to be connected to a database which will store all recipes and ingredients added by a connected users.
 
-Entrez ici les instructions pour bien débuter avec votre projet...
+In there, you'll need to create an account to be able to create or delete a recipe but for people who don't want to be registed, you'll be able to read every recipes without any problem !
 
 ### Pré-requis
 
