@@ -1,0 +1,10 @@
+#addIngredient-bg {
+background-color: #f1f1f1;
+}
+
+#addIngredient-banner {
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    height: 120px;
+}
