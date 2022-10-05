@@ -31,8 +31,13 @@ public class Recipe implements Serializable {
     @JoinColumn(name="user_fk")
     private User user;
 
+
     @OneToMany(mappedBy = "recipe" )
     private List<IngredientRecipe> ingredientRecipeList;
+
+   /* @ManyToMany
+    private List<Ingredient> ingredientList;*/
+
 
     public Recipe() {
     }
